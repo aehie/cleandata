@@ -44,7 +44,7 @@ stdevs <-  grep("std", names(mergedset), ignore.case = TRUE)
 meansdevs <- names(mergedset)[union(means, stdevs)]
 mergedset <- mergedset[ , c("set", "activity.label", "subject.id", meansdevs)]
 
-#Step 4: Including the activity names into the data set
+#Step 3: Including the activity names into the data set
 activities <- read.table("UciHarData/activity_labels.txt",
                          col.names = c("activity.label", "activity"))
 
