@@ -43,13 +43,19 @@ stdevs <-  grep("std", names(mergedset), ignore.case = TRUE)
 meansdevs <- names(mergedset)[union(means, stdevs)]
 mergedset <- mergedset[ , c("set", "activity.label", "subject.id", meansdevs)]
 
-#Including the activity names into the data set
+#Step 4: Including the activity names into the data set
 activities <- read.table("UciHarData/activity_labels.txt",
                          col.names = c("activity.label", "activity"))
 
 mergedset <- merge(mergedset, activities)
 
+#Step 5: creating a new tidy data set
 
-
-
-
+split.actsubj <- split(mergedset, mergedset$subject.id)
+split.actsubj <- lapply(split.actsubj, function(x) split(x, x$activity) )
+split.actsubj <- unlist(split.actsubj, recursive = FALSE)
+tidyset <- ldply(split.actsubj, function(x) colMeans(x[ , meansdevs]))
+tidyset[ , c("subject.id", "activity")] <- ldply(strsplit(tidyset$.id, "\\."))
+tidyset <- cbind(tidyset[ , c("subject.id", "activity")], tidyset[, 1:87])
+tidyset$.id <- NULL
+write.table(tidyset, file = "tidyset.txt",  row.name=FALSE)
