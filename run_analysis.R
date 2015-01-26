@@ -13,6 +13,7 @@ file.rename("UCI HAR Dataset", "UciHarData")
 
 #Reading the data
 
+#Step 4: creating the meaningful variable names
 obsvars <- read.table("UciHarData/features.txt")
 obsvars <- make.names(obsvars[, 2], unique = TRUE)
 
@@ -33,10 +34,10 @@ testset$subject.id <- as.vector(read.table(
   "UciHarData/test/subject_test.txt", colClasses = "factor")[,1])
 testset$set <- "test"
 
-#merging the two sets together
+#Step 1: merging the two sets together
 mergedset <- rbind(trainset, testset)
 
-#extracting only the means and stdev for each measurement
+#Step 2: extracting only the means and stdev for each measurement
 
 means <- grep("mean", names(mergedset), ignore.case = TRUE)
 stdevs <-  grep("std", names(mergedset), ignore.case = TRUE)
