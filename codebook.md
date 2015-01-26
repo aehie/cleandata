@@ -155,20 +155,6 @@
  "fBodyBodyGyroJerkMag.meanFreq.."
  	Fast Fourier Transform of the weighted average of the frequency components of the mean magnitude of the gyroscope Jerk signal
  
- "angle.tBodyAccMean.gravity."
- 
- "angle.tBodyAccJerkMean..gravityMean."
- 
- "angle.tBodyGyroMean.gravityMean."
- 
- "angle.tBodyGyroJerkMean.gravityMean."
- 
- "angle.X.gravityMean."
- 
- "angle.Y.gravityMean."
- 
- "angle.Z.gravityMean."
- 
  "tBodyAcc.std...X"
  	Standard deviation of the body acceleration signal on the X direction
 	
@@ -196,4 +182,4 @@
  "tBodyAccJerk.std...Z"
  	Standard deviation of the body acceleration Jerk signal on the Z direction
  
- "tBodyGyro.std...X" "tBodyGyro.std...Y" "tBodyGyro.std...Z" "tBodyGyroJerk.std...X" "tBodyGyroJerk.std...Y" "tBodyGyroJerk.std...Z" "tBodyAccMag.std.." "tGravityAccMag.std.." "tBodyAccJerkMag.std.." "tBodyGyroMag.std.." "tBodyGyroJerkMag.std.." "fBodyAcc.std...X" "fBodyAcc.std...Y" "fBodyAcc.std...Z" "fBodyAccJerk.std...X" "fBodyAccJerk.std...Y" "fBodyAccJerk.std...Z" "fBodyGyro.std...X" "fBodyGyro.std...Y" "fBodyGyro.std...Z" "fBodyAccMag.std.." "fBodyBodyAccJerkMag.std.." "fBodyBodyGyroMag.std.." "fBodyBodyGyroJerkMag.std.."
+ 
